@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nulled.to</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="topbar">
+        <div class="logo">Nulled.to</div>
+        <nav class="nav">
+            <span onclick="denyAccess()" class="nav-link">Forum</span>
+            <span onclick="denyAccess()" class="nav-link">Leaks</span>
+            <span onclick="denyAccess()" class="nav-link">Accounts</span>
+            <span onclick="denyAccess()" class="nav-link">Services</span>
+            <span onclick="denyAccess()" class="nav-link">Escrow</span>
+            <span onclick="denyAccess()" class="nav-link">Anonymity Tools</span>
+            <span onclick="showSection('phone')" class="nav-link active">Online Phone Tool</span>
+            <span onclick="showSection('chat')" class="nav-link">Chat Tool</span>
+
+        </nav>
+    </header>
+
+    <main class="content">
+    <!-- Phone Tool -->
+        <div class="tool-section" id="phoneSection">
+            <h2>Online Phone Tool</h2>
+            <input type="tel" id="phoneNumber" placeholder="Enter phone number..." />
+            <button onclick="simulateCall()">Call</button>
+
+            <div id="visualizer">
+                <div class="bar" style="--i:0;"></div>
+                <div class="bar" style="--i:1;"></div>
+                <div class="bar" style="--i:2;"></div>
+                <div class="bar" style="--i:3;"></div>
+                <div class="bar" style="--i:4;"></div>
+            </div>
+
+            <div class="dialpad">
+        <div class="row">
+            <button onclick="addDigit('1')">1</button>
+            <button onclick="addDigit('2')">2</button>
+            <button onclick="addDigit('3')">3</button>
+        </div>
+            <div class="row">
+                <button onclick="addDigit('4')">4</button>
+                <button onclick="addDigit('5')">5</button>
+                <button onclick="addDigit('6')">6</button>
+            </div>
+            <div class="row">
+                <button onclick="addDigit('7')">7</button>
+                <button onclick="addDigit('8')">8</button>
+                <button onclick="addDigit('9')">9</button>
+            </div>
+            <div class="row">
+                <button onclick="addDigit('+')">+</button>
+                <button onclick="addDigit('0')">0</button>
+                <button onclick="addDigit('#')">#</button>
+            </div>
+            <div class="row">
+                <button onclick="deleteDigit()">⌫</button>
+            </div>
+        </div>
+            <audio id="callAudio" src="assets/phonecall.mp3"></audio>
+            <audio id="endCallAudio" src="assets/endcall.mp3"></audio>
+        </div>
+
+        <!-- Chat Tool -->
+
+        <div class="tool-section" id="chatSection" style="display: none;">
+            <h2>Anonymus Chat Tool</h2>
+            <div id="chatWindow" class="chat-window"></div>
+            <input type="text" id="chatInput" placeholder="Type a message..." />
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </main>
+
+
+    <!-- ACCESS DENIED OVERLAY -->
+    <div class="overlay" id="accessOverlay">
+        <div class="overlay-content">
+            <h2>🚫 Access Denied</h2>
+            <p>You are not authorized to access this section. <br>
+            Use the TOR-Network to access this site. </p>
+            <button onclick="closeOverlay()">OK</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
